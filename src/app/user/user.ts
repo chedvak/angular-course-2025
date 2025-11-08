@@ -14,7 +14,6 @@ export class User {
 
   get userImgPath() {
     return 'src/assets/users/' + this.user.avatar;
-
   }
 
   onUserClicked() {

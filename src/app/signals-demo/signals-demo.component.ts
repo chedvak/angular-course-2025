@@ -8,23 +8,20 @@ import { Component, effect, signal, computed } from '@angular/core';
 })
 export class SignalsDemoComponent {
   count = signal<number>(0);
-  double = computed(() =>  this.count() * 2 )
+  name = signal('Chedva');
+
+  double = computed(() => this.count() * 2)
 
   increment() {
     this.count.update((c) => c + 1);
+  }
+
+  setName(n: string) {
+    this.name.set(n);
   }
 
   logCount = effect(() => {
     console.log("count is: " + this.count() + " and double is: " + this.double() + " and name is: " + this.name());
   });
 
-
-
-  name = signal('Chedva');
-
-
-
-  setName(n: string) {
-    this.name.set(n);
-  }
 }

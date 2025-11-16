@@ -1,0 +1,29 @@
+<form #exampleForm="ngForm" (ngSubmit)="onSubmit(exampleForm)">
+    <label>Email:</label>
+    <input type="email" name="email" ngModel>
+    <label>Password:</label>
+    <input name="password" name="password" ngModel>
+    <button type="submit">Login</button>
+</form>
+
+
+<!-- <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <input type="email" name="email" ngModel required minlength="5" email #emailRef="ngModel">
+    @if (emailRef.errors && emailRef.touched) {
+    @if (emailRef.errors['required']){
+    <span>required field</span>
+    }
+    @if (emailRef.errors['minlength']){
+    <span>email length should be at least 5 chars</span>
+    }
+    @if (emailRef.errors['email']){
+    <span>invalid email</span>
+    }
+    }
+    <input name="age" ngModel min="18" max="120">
+    <input name="password" ngModel minlength="6" required #passwordRef="ngModel">
+    @if (passwordRef.invalid && passwordRef.touched) {
+    <span class="error"> Invalid password </span>
+    }
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form> -->

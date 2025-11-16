@@ -1,0 +1,150 @@
+<div class="backdrop"></div>
+<dialog open>
+  <h4>Add User</h4>
+
+  <form>
+    <div class="row">
+      <div>
+        <p>
+          <label for="firstName">First Name</label>
+          <input id="name" type="text">
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <label for="lastName">Last Name</label>
+          <input id="lastName" type="text"/>
+        </p>
+      </div>
+    </div>
+
+    <p>
+      <label for="email">Email</label>
+      <input id="email" type="email"/>
+    </p>
+    
+    <div class="row">
+      <p>
+        <label for="password">Password</label>
+        <input id="password" type="password"/>
+      </p>
+      <p>
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" type="password"/>
+      </p>
+    </div>
+    
+    <div class="categories-section">
+      <label>Task Categories</label>
+      <div class="row">
+        <div class="category-row">
+          <label>
+            <input type="checkbox" />
+            work
+          </label>
+        </div>
+        <div class="category-row">
+          <label>
+            <input type="checkbox" />
+            personal
+          </label>
+        </div>
+        <div class="category-row">
+          <label>
+            <input type="checkbox" />
+            urgent
+          </label>
+        </div>
+      </div>
+    </div>
+    <p class="actions">
+      <button type="button">Cancel</button>
+      <button type="submit">Create</button>
+    </p>
+  </form>
+</dialog>
+
+
+ <!-- <div class="backdrop"></div>
+<dialog open>
+  <h4>Add User</h4>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row" formGroupName="name">
+      <div>
+        <p>
+          <label for="firstName">First Name</label>
+          <input id="firstName" formControlName="firstName" type="text" />
+        </p>
+        @if(firstNameRequired){
+          <p class="error-messages">First name is required.</p>
+        }
+        @if (firstNameTooLong) {
+          <p class="error-messages">First name must be at most 30 characters.</p>
+        }
+      </div>
+      <div>
+        <p>
+          <label for="lastName">Last Name</label>
+          <input id="lastName" formControlName="lastName" type="text" />
+        </p>
+          @if (lastNameRequired) { <p class="error-messages">Last name is required.</p> }
+          @if (lastNameTooLong) { <p class="error-messages">Last name must be at most 30 characters.</p> }
+      
+      </div>
+    </div>
+
+
+    <p>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" />
+    </p>
+
+    @if (emailRequired || emailInvalid) {
+    <p class="error-messages">
+      @if (emailRequired) { <span>Email is required.</span> }
+      @if (emailInvalid) { <span>Please enter a valid email address.</span> }
+    </p>
+    }
+
+    <div class="row" formGroupName="passwords">
+      <p>
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" />
+      </p>
+      <p>
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+      </p>
+    </div>
+    @if (passwordRequired || passwordTooShort || passwordsMismatch) {
+    <p class="error-messages">
+      @if (passwordRequired) { <span>Password is required.</span> }
+      @if (passwordTooShort) { <span>Password must be at least 6 characters.</span> }
+      @if (passwordsMismatch) { <span>Passwords do not match.</span> }
+    </p>
+    }
+
+    <div formArrayName="categories" class="categories-section">
+      <label>Task Categories</label>
+      <div class="row">
+        @for (cat of categoriesList; track $index) {
+        <div class="category-row">
+          <label>
+            <input type="checkbox" [formControlName]="$index" />
+            {{ cat }}
+          </label>
+        </div>
+        }
+      </div>
+    </div>
+    <p class="actions">
+      <button type="button">Cancel</button>
+      <button type="submit">Create</button>
+    </p>
+  </form>
+</dialog> 
+
+
+  -->

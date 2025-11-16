@@ -1,10 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Task } from './task/task';
 import { fakeTasks } from './fake_tasks';
+import { NewTask } from './new-task/new-task';
+import { MyForm } from "./my-form/my-form";
+import { NewTaskData } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
-  imports: [Task],
+  imports: [Task, NewTask, MyForm],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css'
 })
@@ -12,6 +15,7 @@ export class Tasks {
   @Input() userName: string = '';
   @Input() userId: string = '';
 
+  shouldShowAddTaskDialog = false;
   tasks = fakeTasks
 
   get userSelectedTasks() {
@@ -22,16 +26,25 @@ export class Tasks {
     this.tasks = this.tasks.filter((task) => task.id !== taskId);
   }
 
-  addTask() {
+  onClickAddTask() {
+    this.shouldShowAddTaskDialog = true;
+  }
+
+  onCreateNewTask(newTaskData: NewTaskData){
     const newTask = {
-      id: 'newt1',
-      userId: 'u1',
-      title: 'New task',
-      summary:
-        'Learn all the basic and advanced features of Angular & how to apply them.',
-      dueDate: '2025-12-31',
-    }
-    fakeTasks.push(newTask);
-    this.tasks = fakeTasks;
+      id: 't' + (this.tasks.length + 1),
+      userId: this.userId,
+      title: newTaskData.title,
+      summary: newTaskData.summary,
+      dueDate: newTaskData.dueDate, 
+    }   
+
+    this.tasks.push(newTask);
+    this.closeDialog();
+
+  }
+
+  closeDialog(){
+    this.shouldShowAddTaskDialog = false;
   }
 }

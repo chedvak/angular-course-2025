@@ -1,21 +1,28 @@
-<!-- <app-header />
+<app-header />
+<div class="actions">
+  <button (click)="onClickAddUser()">Add User</button>
+  <button (click)="onClickAddUser()">Contact Us</button>
+</div>
 <main>
-  
+
   <ul id="users">
     @for (user of users; track user.id) {
-      <li>
-        <app-user [user]="user" [isSelected]="user.id === selectedUser?.id" (userSelected)="onUserSelected($event)" />
-      </li>
-  }
+    <li>
+      <app-user [user]="user" [isSelected]="user.id === selectedUser?.id" (userSelected)="onUserSelected($event)" />
+    </li>
+    }
   </ul>
-  
-  @if (selectedUser){
-     <app-tasks [userName]="selectedUser.name" [userId]="selectedUser.id"></app-tasks>
+
+  @if (selectedUser) {
+  <app-tasks [userName]="selectedUser.name" [userId]="selectedUser.id"></app-tasks>
   } @else {
-     <p>Please select a user to view their tasks.</p>
+  <p>Please select a user to view their tasks.</p>
   }
+</main>
 
-</main> -->
+@if (shouldShowAddUserForm) {
+<app-new-user (newUser)="addUser($event)"></app-new-user>
+}
 
 
-<app-signals-demo></app-signals-demo>
+<!-- <app-my-form></app-my-form> -->

@@ -8,10 +8,11 @@ import { UserObj } from './user/user.model';
 import { SignalsDemoComponent } from "./signals-demo/signals-demo.component";
 import { NewUser } from "./user/new-user/new-user";
 import { MyForm } from "./tasks/my-form/my-form";
+import { GameContainer } from "./guessTheColor/game-container/game-container";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm],
+  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

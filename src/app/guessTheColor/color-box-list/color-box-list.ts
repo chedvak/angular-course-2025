@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { getRandomColor } from '../utils';
 import { ColorBox } from "../color-box/color-box";
 
@@ -8,7 +8,8 @@ import { ColorBox } from "../color-box/color-box";
   templateUrl: './color-box-list.html',
   styleUrl: './color-box-list.css',
 })
-export class ColorBoxList {
+export class ColorBoxList implements OnInit {
+
   @Input() colorToGuess!: string;
   colors: string[] = [];
 

@@ -1,0 +1,32 @@
+.products-card {
+  background-color: #ffe0b2;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.products-title {
+  color: #bf360c;
+}
+
+.items-count {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.add-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff7043;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: #f4511e;
+}

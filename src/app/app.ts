@@ -10,10 +10,11 @@ import { NewUser } from "./user/new-user/new-user";
 import { MyForm } from "./tasks/my-form/my-form";
 import { GameContainer } from "./guessTheColor/game-container/game-container";
 import { ShoppingPage } from "./shoppingService/shopping-page/shopping-page";
+import { StudentsContainer } from "./studentsList/students-container/students-container";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage],
+  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage, StudentsContainer],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

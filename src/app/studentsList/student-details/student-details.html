@@ -1,0 +1,14 @@
+<div class="details-card">
+  <h2 class="details-title">{{ student()?.name }}</h2>
+
+  <nav class="sub-nav">
+    <a routerLink="info" routerLinkActive="active">Personal details</a>
+    <a routerLink="grades" routerLinkActive="active">Grades</a>
+  </nav>
+
+  <div class="nested-box">
+    <router-outlet></router-outlet>
+  </div>
+
+  <a class="back-link" routerLink="/students">⬅ Back To List</a>
+</div>

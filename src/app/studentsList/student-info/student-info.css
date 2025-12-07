@@ -1,0 +1,23 @@
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.info-label {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.info-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}

@@ -8,6 +8,5 @@ import { CartService } from '../CartService';
   styleUrl: './cart.css',
 })
 export class Cart {
-  cartService = new CartService();
-  // cartService = inject(CartService);
+  cartService = new CartService
 }

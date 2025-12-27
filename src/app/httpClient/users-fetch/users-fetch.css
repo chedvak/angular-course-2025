@@ -1,0 +1,60 @@
+.loading {
+  color: #1976d2;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.error {
+  color: #d32f2f;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.users-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.user-card {
+  display: flex;
+  align-items: flex-start; /* align to top */
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: transform 0.2s;
+  word-wrap: break-word; /* wrap long words */
+  overflow: hidden;      /* prevent overflow */
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.user-info {
+  flex: 1;       /* take remaining space */
+  min-width: 0;  /* prevent flex overflow */
+}
+
+.user-info .name{
+      margin: 2px 0;
+  white-space: normal;  /* allow wrapping */
+  font-weight: bold;
+}
+.user-info .email,
+.user-info .username {
+  margin: 2px 0;
+  white-space: normal;  /* allow wrapping */
+  font-size: small;
+}

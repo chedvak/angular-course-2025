@@ -11,10 +11,11 @@ import { MyForm } from "./tasks/my-form/my-form";
 import { GameContainer } from "./guessTheColor/game-container/game-container";
 import { ShoppingPage } from "./shoppingService/shopping-page/shopping-page";
 import { StudentsContainer } from "./studentsList/students-container/students-container";
+import { UsersFetch } from "./httpClient/users-fetch/users-fetch";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage, StudentsContainer],
+  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage, StudentsContainer, UsersFetch],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

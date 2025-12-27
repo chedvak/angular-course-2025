@@ -13,10 +13,11 @@ import { ShoppingPage } from "./shoppingService/shopping-page/shopping-page";
 import { StudentsContainer } from "./studentsList/students-container/students-container";
 import { UsersFetch } from "./httpClient/users-fetch/users-fetch";
 import { TimerContainer } from "./lifeCycle/timer-container/timer-container";
+import { ObservableComponent } from "./observbaleDemo/observable-component/observable-component";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage, StudentsContainer, UsersFetch, TimerContainer],
+  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage, StudentsContainer, UsersFetch, TimerContainer, ObservableComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

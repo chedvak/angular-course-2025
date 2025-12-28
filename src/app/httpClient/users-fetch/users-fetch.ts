@@ -36,34 +36,51 @@ export class UsersFetch implements OnInit, OnDestroy {
   private http = inject(HttpClient);
 
   users: User[] = [];
-  loading = false;
-  error: string | null = null;
   private sub?: Subscription;
 
   ngOnInit() {
-    this.loading = true;
-
-    setTimeout(() => {
-      fetchUsers();
-    }, 2000);
-
-    const fetchUsers = () => {
-      this.sub = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe({
-        next: (data) => {
-          this.users = data;
-          this.loading = false;
-          console.log(this.users);
-        },
-        error: (_) => {
-          this.error = 'Error loading data';
-          this.loading = false;
-          console.log(this.error);
-        },
-      });
-    };
+    this.sub = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe({
+      next: (data) => {
+        this.users = data;
+        console.log(this.users);
+      },
+    });
   }
 
   ngOnDestroy() {
     this.sub?.unsubscribe();
   }
+
+  // users: User[] = [];
+  // private sub?: Subscription;
+
+  //  loading = false;
+  // error: string | null = null;
+
+  // ngOnInit() {
+  //   this.loading = true;
+
+  //   setTimeout(() => {
+  //     fetchUsers();
+  //   }, 2000);
+
+  //   const fetchUsers = () => {
+  //     this.sub = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe({
+  //       next: (data) => {
+  //         this.users = data;
+  //         this.loading = false;
+  //         console.log(this.users);
+  //       },
+  //       error: (_) => {
+  //         this.error = 'Error loading data';
+  //         this.loading = false;
+  //         console.log(this.error);
+  //       },
+  //     });
+  //   };
+  // }
+
+  // ngOnDestroy() {
+  //   this.sub?.unsubscribe();
+  // }
 }

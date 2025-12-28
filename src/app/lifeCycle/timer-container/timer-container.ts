@@ -9,4 +9,8 @@ import { Timer } from "../timer/timer";
 })
 export class TimerContainer {
   showTimer = false
+  
+  get buttonText() {
+    return this.showTimer ? 'Hide Timer' : 'Show Timer'
+  }
 }

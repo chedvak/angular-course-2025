@@ -1,4 +1,4 @@
-import { Directive, effect, ElementRef, inject, input } from '@angular/core';
+import { Directive, ElementRef, inject, input } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]',
@@ -14,12 +14,6 @@ export class Highlight {
   color = input<string>('yellow', {
     alias: 'appHighlight'
   });
-
-  // constructor() {
-  //   effect(() => {
-  //     this.el.nativeElement.style.backgroundColor = this.color();
-  //   });
-  // }
 
    onMouseEnter() {
     this.el.nativeElement.style.backgroundColor = this.color();

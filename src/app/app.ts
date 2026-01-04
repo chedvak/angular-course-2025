@@ -14,10 +14,11 @@ import { StudentsContainer } from "./studentsList/students-container/students-co
 import { UsersFetch } from "./httpClient/users-fetch/users-fetch";
 import { TimerContainer } from "./lifeCycle/timer-container/timer-container";
 import { ObservableComponent } from "./observbaleDemo/observable-component/observable-component";
+import { Parent } from "./ngContent/parent/parent";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage, StudentsContainer, UsersFetch, TimerContainer, ObservableComponent],
+  imports: [Header, User, Tasks, SignalsDemoComponent, NewUser, MyForm, GameContainer, ShoppingPage, StudentsContainer, UsersFetch, TimerContainer, ObservableComponent, Parent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

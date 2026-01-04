@@ -1,4 +1,10 @@
-<h1>Users List</h1>
+<h1 [ngClass]="{a: true, b: false}" appHighlight="blue" [appResizeText]=16>Users List</h1>
+
+{{ 'angular pipes' | uppercase | slice:0:7 }}
+{{ date | date:'short':'UTC' | lowercase }}
+
+{{ 0445.333444445 | percent }}
+
 
 @if(loading){
 <div class="loading">⏳ Loading users...</div>

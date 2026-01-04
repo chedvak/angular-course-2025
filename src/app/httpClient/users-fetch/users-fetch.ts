@@ -1,6 +1,9 @@
+import { CurrencyPipe, DatePipe, DecimalPipe, LowerCasePipe, PercentPipe, SlicePipe, UpperCasePipe, NgClass } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Highlight } from '../../highlight';
+import { ResizeText } from "../../resize-text";
 
 export interface User {
   id: number;
@@ -28,59 +31,60 @@ export interface User {
 
 @Component({
   selector: 'app-users-fetch',
-  imports: [],
+  imports: [UpperCasePipe, SlicePipe, DatePipe, LowerCasePipe, CurrencyPipe, DecimalPipe, PercentPipe, NgClass, Highlight, ResizeText],
   templateUrl: './users-fetch.html',
   styleUrl: './users-fetch.css',
 })
 export class UsersFetch implements OnInit, OnDestroy {
   private http = inject(HttpClient);
-
-  users: User[] = [];
-  private sub?: Subscription;
-
-  ngOnInit() {
-    this.sub = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe({
-      next: (data) => {
-        this.users = data;
-        console.log(this.users);
-      },
-    });
-  }
-
-  ngOnDestroy() {
-    this.sub?.unsubscribe();
-  }
+  date = new Date();
 
   // users: User[] = [];
   // private sub?: Subscription;
 
-  //  loading = false;
-  // error: string | null = null;
-
   // ngOnInit() {
-  //   this.loading = true;
-
-  //   setTimeout(() => {
-  //     fetchUsers();
-  //   }, 2000);
-
-  //   const fetchUsers = () => {
-  //     this.sub = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe({
-  //       next: (data) => {
-  //         this.users = data;
-  //         this.loading = false;
-  //         console.log(this.users);
-  //       },
-  //       error: (_) => {
-  //         this.error = 'Error loading data';
-  //         this.loading = false;
-  //         console.log(this.error);
-  //       },
-  //     });
-  //   };
+  //   this.sub = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe({
+  //     next: (data) => {
+  //       this.users = data;
+  //       console.log(this.users);
+  //     },
+  //   });
   // }
 
   // ngOnDestroy() {
   //   this.sub?.unsubscribe();
   // }
+
+  users: User[] = [];
+  private sub?: Subscription;
+
+   loading = false;
+  error: string | null = null;
+
+  ngOnInit() {
+    this.loading = true;
+
+    setTimeout(() => {
+      fetchUsers();
+    }, 2000);
+
+    const fetchUsers = () => {
+      this.sub = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe({
+        next: (data) => {
+          this.users = data;
+          this.loading = false;
+          console.log(this.users);
+        },
+        error: (_) => {
+          this.error = 'Error loading data';
+          this.loading = false;
+          console.log(this.error);
+        },
+      });
+    };
+  }
+
+  ngOnDestroy() {
+    this.sub?.unsubscribe();
+  }
 }

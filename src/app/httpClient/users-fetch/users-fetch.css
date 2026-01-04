@@ -58,3 +58,11 @@
   white-space: normal;  /* allow wrapping */
   font-size: small;
 }
+
+.a{
+    color: red;
+}
+
+.b{
+    background-color: yellow;
+}

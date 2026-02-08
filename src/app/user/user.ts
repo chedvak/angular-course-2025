@@ -10,7 +10,8 @@ import { UserObj } from './user.model';
 export class User {
   @Input({ required: true }) user!: UserObj;
   @Input({required: true}) isSelected!: boolean;
-  @Output() userSelected = new EventEmitter<string>();
+  // @Output() userSelected = new EventEmitter<string>();
+  userSelected = output<string>();
 
   get userImgPath() {
     return 'src/assets/users/' + this.user.avatar;

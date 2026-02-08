@@ -32,12 +32,12 @@
   </div>
 </div>
 
-<!-- <div class="container">
+<div class="container">
   <app-card>
-    <h3 card-header>User</h3>
+    <h3 card-header [appResizeText]=16>User</h3>
 
     <div card-body>
-      <p>Name: Dana</p>
+      <p [appResizeText]=16>{{'Name: Dana' | truncate:5}}</p>
       <input type="text" placeholder="Enter Email" />
     </div>
   </app-card>
@@ -58,4 +58,4 @@
     <button>Retry</button>
     <button>Cancel</button>
   </app-card>
-</div> -->
+</div>
